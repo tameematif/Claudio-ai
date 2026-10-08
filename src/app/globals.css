@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #475569 transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #475569;
+    border-radius: 3px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: #64748b;
+  }
+
+  body {
+    @apply bg-panel-bg text-slate-200 font-mono;
+    overflow: hidden;
+  }
+}
+
+@layer components {
+  .panel-section {
+    @apply bg-panel-surface border-panel-border;
+  }
+
+  .btn-primary {
+    @apply bg-accent-primary hover:bg-accent-hover text-white px-3 py-1.5 rounded text-sm font-medium transition-colors duration-150;
+  }
+
+  .btn-ghost {
+    @apply text-slate-400 hover:text-slate-200 hover:bg-panel-hover px-2 py-1 rounded transition-colors duration-150;
+  }
+
+  .input-field {
+    @apply bg-panel-bg border border-panel-border text-slate-200 rounded px-3 py-2 text-sm focus:outline-none focus:border-accent-primary focus:ring-1 focus:ring-accent-primary transition-colors;
+  }
+}
+
+/* Markdown code blocks in chat */
+.chat-content pre {
+  @apply bg-panel-bg rounded-lg p-4 my-2 overflow-x-auto border border-panel-border;
+}
+
+.chat-content code {
+  @apply font-mono text-sm;
+}
+
+.chat-content :not(pre) > code {
+  @apply bg-panel-bg text-blue-400 px-1.5 py-0.5 rounded text-sm;
+}
+
+.chat-content p {
+  @apply mb-2 leading-relaxed;
+}
+
+.chat-content ul,
+.chat-content ol {
+  @apply mb-2 pl-5;
+}
+
+.chat-content li {
+  @apply mb-1;
+}
+
+.chat-content h1,
+.chat-content h2,
+.chat-content h3 {
+  @apply font-bold mb-2 mt-3;
+}
+
+.chat-content h1 {
+  @apply text-lg;
+}
+
+.chat-content h2 {
+  @apply text-base;
+}
+
+.chat-content h3 {
+  @apply text-sm;
+}
+
+.chat-content a {
+  @apply text-blue-400 hover:text-blue-300 underline;
+}
+
+.chat-content blockquote {
+  @apply border-l-2 border-slate-500 pl-3 text-slate-400 my-2;
+}
+
+.chat-content table {
+  @apply w-full border-collapse my-2;
+}
+
+.chat-content th,
+.chat-content td {
+  @apply border border-panel-border px-3 py-1.5 text-sm;
+}
+
+.chat-content th {
+  @apply bg-panel-hover font-semibold;
+}
